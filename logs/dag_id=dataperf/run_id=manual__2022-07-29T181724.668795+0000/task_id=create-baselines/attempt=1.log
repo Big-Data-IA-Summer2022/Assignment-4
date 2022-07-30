@@ -1,0 +1,34 @@
+[2022-07-29 18:17:25,609] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: dataperf.create-baselines manual__2022-07-29T18:17:24.668795+00:00 [queued]>
+[2022-07-29 18:17:25,617] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: dataperf.create-baselines manual__2022-07-29T18:17:24.668795+00:00 [queued]>
+[2022-07-29 18:17:25,618] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-29 18:17:25,618] {taskinstance.py:1377} INFO - Starting attempt 1 of 1
+[2022-07-29 18:17:25,619] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-29 18:17:25,631] {taskinstance.py:1397} INFO - Executing <Task(BashOperator): create-baselines> on 2022-07-29 18:17:24.668795+00:00
+[2022-07-29 18:17:25,635] {standard_task_runner.py:52} INFO - Started process 109 to run task
+[2022-07-29 18:17:25,637] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'dataperf', 'create-baselines', 'manual__2022-07-29T18:17:24.668795+00:00', '--job-id', '178', '--raw', '--subdir', 'DAGS_FOLDER/dataperfr.py', '--cfg-path', '/tmp/tmp3ika34g1', '--error-file', '/tmp/tmpm45ch0qu']
+[2022-07-29 18:17:25,637] {standard_task_runner.py:80} INFO - Job 178: Subtask create-baselines
+[2022-07-29 18:17:25,689] {task_command.py:371} INFO - Running <TaskInstance: dataperf.create-baselines manual__2022-07-29T18:17:24.668795+00:00 [running]> on host 54cc325577cf
+[2022-07-29 18:17:25,749] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dataperf
+AIRFLOW_CTX_TASK_ID=create-baselines
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-29T18:17:24.668795+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-07-29T18:17:24.668795+00:00
+[2022-07-29 18:17:25,750] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-07-29 18:17:25,751] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python dags/dependency/create_baselines.py']
+[2022-07-29 18:17:25,758] {subprocess.py:85} INFO - Output:
+[2022-07-29 18:17:25,828] {subprocess.py:92} INFO - python: can't open file 'dags/dependency/create_baselines.py': [Errno 2] No such file or directory
+[2022-07-29 18:17:25,830] {subprocess.py:96} INFO - Command exited with return code 2
+[2022-07-29 18:17:25,841] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2022-07-29 18:17:25,846] {taskinstance.py:1420} INFO - Marking task as FAILED. dag_id=dataperf, task_id=create-baselines, execution_date=20220729T181724, start_date=20220729T181725, end_date=20220729T181725
+[2022-07-29 18:17:25,858] {standard_task_runner.py:97} ERROR - Failed to execute job 178 for task create-baselines (Bash command failed. The command returned a non-zero exit code 2.; 109)
+[2022-07-29 18:17:25,890] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-07-29 18:17:25,926] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

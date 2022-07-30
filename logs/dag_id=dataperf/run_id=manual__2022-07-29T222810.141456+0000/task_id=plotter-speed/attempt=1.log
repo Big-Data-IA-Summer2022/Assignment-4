@@ -1,0 +1,28 @@
+[2022-07-29 22:40:43,679] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: dataperf.plotter-speed manual__2022-07-29T22:28:10.141456+00:00 [queued]>
+[2022-07-29 22:40:43,688] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: dataperf.plotter-speed manual__2022-07-29T22:28:10.141456+00:00 [queued]>
+[2022-07-29 22:40:43,689] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-29 22:40:43,689] {taskinstance.py:1377} INFO - Starting attempt 1 of 1
+[2022-07-29 22:40:43,689] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-29 22:40:43,703] {taskinstance.py:1397} INFO - Executing <Task(BashOperator): plotter-speed> on 2022-07-29 22:28:10.141456+00:00
+[2022-07-29 22:40:43,707] {standard_task_runner.py:52} INFO - Started process 745 to run task
+[2022-07-29 22:40:43,710] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'dataperf', 'plotter-speed', 'manual__2022-07-29T22:28:10.141456+00:00', '--job-id', '230', '--raw', '--subdir', 'DAGS_FOLDER/dataperfr.py', '--cfg-path', '/tmp/tmpsbja3lzo', '--error-file', '/tmp/tmp8pay1gs5']
+[2022-07-29 22:40:43,710] {standard_task_runner.py:80} INFO - Job 230: Subtask plotter-speed
+[2022-07-29 22:40:43,765] {task_command.py:371} INFO - Running <TaskInstance: dataperf.plotter-speed manual__2022-07-29T22:28:10.141456+00:00 [running]> on host 5eb1407492fa
+[2022-07-29 22:40:43,840] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=dataperf
+AIRFLOW_CTX_TASK_ID=plotter-speed
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-29T22:28:10.141456+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-07-29T22:28:10.141456+00:00
+[2022-07-29 22:40:43,841] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-07-29 22:40:43,842] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'cd /opt/***/dags/dependency; python plotter_speed.py']
+[2022-07-29 22:40:43,850] {subprocess.py:85} INFO - Output:
+[2022-07-29 22:40:44,940] {subprocess.py:92} INFO - Matplotlib created a temporary config/cache directory at /tmp/matplotlib-p2wafsel because the default path (/home/***/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+[2022-07-29 22:40:47,009] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-07-29 22:40:47,043] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=dataperf, task_id=plotter-speed, execution_date=20220729T222810, start_date=20220729T224043, end_date=20220729T224047
+[2022-07-29 22:40:47,094] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-07-29 22:40:47,126] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
