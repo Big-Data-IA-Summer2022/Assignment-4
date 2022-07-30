@@ -9,7 +9,7 @@ def app():
     buttonstat=st.button('Get Results', disabled=False)
     if buttonstat:
         piclist=[]
-        for i in (glob.glob("./results/*.png")):
+        for i in (glob.glob("./dependency/results/*.png")):
             piclist.append(i)
         print(piclist)
         image = Image.open(piclist[0])
