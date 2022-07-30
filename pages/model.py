@@ -17,6 +17,7 @@ def app():
     option2 = st.selectbox('Select noice_level',('0.3',)) 
     option3 = st.selectbox('Select test_size',('500',)) 
     option4 = st.selectbox('Select val_size',('100',)) 
+    option5 = st.selectbox('Select baselines',('neighbor_shapley (datascope)','random','influence_function','mc_shapley')) 
 
     #st.write('You selected:', 'Data_ID:',option,'train_size:', option1,'noice_level:', option2, 'test_size is:', option3, 'val_size is:', option4)
 
@@ -24,7 +25,8 @@ def app():
     buttonstat=st.button('Get Results', disabled=False)
     if buttonstat:
         from jinja2 import Environment, FileSystemLoader
-        env = Environment(loader = FileSystemLoader(r"C:\Users\Juichavan\Desktop\assign4"), trim_blocks=True, lstrip_blocks=True)
+        
+        env = Environment(loader = FileSystemLoader(r"C:\Users\abhij\Documents\GitHub\assignment 4 stream\Assignment-4-streamlit_1\Assignment-4-streamlit_1\dags"), trim_blocks=True, lstrip_blocks=True)
 
         template = env.get_template('template.yml')
 
@@ -34,11 +36,14 @@ def app():
                     'noise_level': option2,
                     'test_size': option3,
                     'val_size': option4,
-                    'baseline': 'random',
+                    'baseline': option5,
 
          }
         print(template.render(values))
-        file=open("output.yaml", "w")
+        file=open("dependency/task_setup.yml", "w")
+        file.write(template.render(values))
+        file.close()
+        file=open("dependency/task_setup_docker.yml", "w")
         file.write(template.render(values))
         file.close()
 
