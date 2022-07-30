@@ -45,6 +45,7 @@ if st.session_state['if_logged'] == True:
     # Add all your application here
     app.add_app("Home", home.app)
     app.add_app("Model-Test", model.app)
+    app.add_app("Results", pics.app)
     
     # The main app
     app.run()
