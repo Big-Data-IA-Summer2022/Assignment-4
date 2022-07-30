@@ -11,17 +11,7 @@ import json
 import schemas
 from routers.oaut2 import get_current_user
 from fastapi import FastAPI,status,HTTPException
-##########################################################################
 
-load_dotenv()
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('BQ_KEY_JSON')
-LOGLEVEL = os.environ.get('LOGLEVEL', 'INFO').upper()
-logging.basicConfig(
-    format='%(asctime)s %(levelname)-8s %(message)s',
-    level=LOGLEVEL,
-    datefmt='%Y-%m-%d %H:%M:%S')
-
-###########################################################################
 
 app = FastAPI(title="Main App")
 
