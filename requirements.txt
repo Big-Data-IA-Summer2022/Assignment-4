@@ -1,0 +1,13 @@
+tensorflow_hub
+tensorflow_datasets
+pyyaml
+torch
+torch
+pyarrow
+tqdm
+pandas
+xgboost
+seaborn
+loguru
+sklearn
+datascope==0.0.3
