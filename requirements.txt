@@ -3,3 +3,4 @@ watchdog
 google-cloud-bigquery==2.34.1
 python-dotenv
 jinja2
+pillow
